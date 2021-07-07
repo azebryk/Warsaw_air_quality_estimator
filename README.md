@@ -65,11 +65,14 @@ I merged both files, cleaned data, corrected types and set datetime index.
 ## EDA
 I looked at the general info and distributions of the data. Here are some highlights:
 ### Temperature
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/salary_by_job_title.PNG "Salary by Position")
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg" width=600>
+</p>
+![alt text](https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg "Salary by Position")
 ### PM2.5 level
 I created heatmap for each year presenting PM2.5 level. Here is a plot for 2018 (plots for other years can be found in notebook)
 
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/positions_by_state.png "Job Opportunities by State")
+![alt text](https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_2018.jpg "Job Opportunities by State")
 ### Covid 19 impact on air quality in Warsaw
 
 During the first weeks of pandemia the world stopped for a second. Schools, factories and offices were closed to prevet spread of the virus.  
