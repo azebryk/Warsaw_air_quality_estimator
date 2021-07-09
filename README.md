@@ -68,23 +68,72 @@ I looked at the general info and distributions of the data. Here are some highli
 <p align="center">
   <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg" width=600>
 </p>
-![alt text](https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg "Salary by Position")
+
 ### PM2.5 level
-I created heatmap for each year presenting PM2.5 level. Here is a plot for 2018 (plots for other years can be found in notebook)
+I created heatmap for each year presenting PM2.5 level. Here is a plot for 2018 (plots for other years can be found in notebook).
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_2018.jpg" width=600>
+</p>
+As it is shown PM2.5 level is significantly higher during winter. Let's see how does PM2.5 level looks on the real plot in terms of temperature and wind.
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/pm25_temp_wind.JPG" width=600>
+</p>
 
-![alt text](https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_2018.jpg "Job Opportunities by State")
 ### Covid 19 impact on air quality in Warsaw
-
 During the first weeks of pandemia the world stopped for a second. Schools, factories and offices were closed to prevet spread of the virus.  
 Let's see if it changes PM2.5 level in the Warsaw city ceter by comparing it to previous years.
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_covid.jpg" width=600>
+</p>
 
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/correlation_visual.png "Correlations")
+#### Comment/Observation:
+
+- Note: 2021 curve is highlighted
+- PM2.5 lvl is significantly lower during firts week and in general rather lower than in previous years
+- missing days can be observed (2019, 2017)
+- 2015 was omitted due to bad quality of data
+  
+To confirm our observation let's check average temperature and average PM2.5 level in April for each year.
+
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_covid.jpg" width=600>
+</p>
+
+### Correlations
+Quality of air is obtain by measuring several factors such as PM2.5, PM10, NO2.  
+For this analysis I will focus on PM2.5, thus I will remove columns with other air polutions.
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Correlation_heatmap.jpg" width=600>
+</p>
+
+#### Comment/Observation:
+
+- Winds at 10m and 50m are highly correlated. For further analysis I will use only wind speed at 50m.
+- Max, min and avg temperatures plus Specific Humidity at 2 Meters are highly correlated (above 0.9). I will keep only average temperature
+
 
 ## Model Building 
+#### Base models
+I started from compering models with default hyperparameters. Prior to this, all features were standarized using StandardScaler.
+Models, which were compared:
+    - KNeighborsRegressor,
+    - LinearRegression,
+    - Ridge, 
+    - DecisionTreeRegressor, 
+    - RandomForestRegressor, 
+    - GradientBoostingRegressor
+    - XGBRegressor
 
-First, I transformed the categorical variables into dummy variables. I also split the data into train and tests sets with a test size of 20%.   
+#### Tuning hyperparameters using GrudSearchCV
 
-I tried three different models and evaluated them using Mean Absolute Error. I chose MAE because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.   
+Based on results, I selected the best performing model and I optimized its hyperparameters using GridSearchCV.
+
+#### Adding new feature
+Traffic jams are one of the factor that contributes to bad air quality.
+For further improvement of my model performance I decided to introduce new feature - "Weekday", because as I live in Warsaw I see how traffic jams vary for different days. 
+3. Optimization of best performing model using GridSearchCV.
+4. Add additional binary feature 'weekday' and verify wather it improves model performance.
+5. Plot feature importances.
 
 I tried three different models:
 *	**Multiple Linear Regression** – Baseline for the model
