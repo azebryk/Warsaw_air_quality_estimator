@@ -128,31 +128,45 @@ Models, which were compared:
 
 Based on results, I selected the best performing model and I optimized its hyperparameters using GridSearchCV.
 Parmeters grid:
-
-
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/param_grid.jpg" width=600>
+</p>
+Best parameters:
 
 #### Adding new feature
 Traffic jams are one of the factor that contributes to bad air quality.
 For further improvement of my model performance I decided to introduce new feature - "Weekday", because as I live in Warsaw I see how traffic jams vary for different days. 
 
 ## Model Performance Comparison
-Tabel below present comparison of model performance.
-    WSTAWIC TABELKE
+Tabel below present comparison of model performance comparison.
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.jpg" width=600>
+</p>
+The best baseline model with default parameters was:
 
+* **GradientBoostingRegressor** : MSE = 621.50.
+which with further tuning using GridSearchCV ends up with:
 
-I tried three different models:
-*	**Multiple Linear Regression** – Baseline for the model
-*	**Lasso Regression** – Because of the sparse data from the many categorical variables, I thought a normalized regression like lasso would be effective.
-*	**Random Forest** – Again, with the sparsity associated with the data, I thought that this would be a good fit. 
+* **GradientBoostingRegressor with best parameters** : MSE = 616.62.
+and finally adding additional feature "weekday"
 
-## Model performance
-The Random Forest model far outperformed the other approaches on the test and validation sets. 
-*	**Random Forest** : MAE = 11.22
-*	**Linear Regression**: MAE = 18.86
-*	**Ridge Regression**: MAE = 19.67
+* **GradientBoostingRegressor** : MSE = 613.42.
 
-## Productionization 
-In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary. 
+### Feature importance
+For better understending of my model I plotted feature importance:
+<p align="center">
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature importance.jpg" width=600>
+</p>
+Temperature is the most important feature used to predict PM2.5 level.
+
+## Validation
+To check how my model performs I used real-time data.
+- Weather data: IMGW API 'https://danepubliczne.imgw.pl/api/data/synop'  
+- Air polution data: web scraping using URL: 'https://aqicn.org/city/poland/mazowieckie/warszawa/marszalkowska/pl/'  
+
+Using IMGW API I get current weather in Warsaw. I used my model to predict PM2.5 level, which was later compared with actual PM2.5 level scraped from AQICN using request and BeautifulSoup libraries. 
+**Validation run (14th July 2021): MSE = 55.94**
+
 
 ## Code and Resources Used 
 **Python Version:** 3.8.3  
