@@ -96,7 +96,7 @@ Let's see if it changes PM2.5 level in the Warsaw city ceter by comparing it to 
 To confirm our observation let's check average temperature and average PM2.5 level in April for each year.
 
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_covid.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/pm25_covid_table.JPG" width=400>
 </p>
 
 ### Correlations
@@ -129,7 +129,7 @@ Models, which were compared:
 Based on results, I selected the best performing model and I optimized its hyperparameters using GridSearchCV.
 Parmeters grid:
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/param_grid.JPG" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/param_grid.JPG" width=500>
 </p>
 Best parameters:
 
@@ -140,14 +140,16 @@ For further improvement of my model performance I decided to introduce new featu
 ## Model Performance Comparison
 Tabel below present comparison of model performance comparison.
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.JPG" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.JPG" width=500>
 </p>
 The best baseline model with default parameters was:
 
 * **GradientBoostingRegressor** : MSE = 621.50.
+
 which with further tuning using GridSearchCV ends up with:
 
 * **GradientBoostingRegressor with best parameters** : MSE = 616.62.
+
 and finally adding additional feature "weekday"
 
 * **GradientBoostingRegressor** : MSE = 613.42.
@@ -155,7 +157,7 @@ and finally adding additional feature "weekday"
 ### Feature importance
 For better understending of my model I plotted feature importance:
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature%20importance.JPG" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature%20importance.JPG" width=700>
 </p>
 Temperature is the most important feature used to predict PM2.5 level.
 
