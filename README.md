@@ -129,7 +129,7 @@ Models, which were compared:
 Based on results, I selected the best performing model and I optimized its hyperparameters using GridSearchCV.
 Parmeters grid:
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/param_grid.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/param_grid.JPG" width=600>
 </p>
 Best parameters:
 
@@ -140,7 +140,7 @@ For further improvement of my model performance I decided to introduce new featu
 ## Model Performance Comparison
 Tabel below present comparison of model performance comparison.
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.JPG" width=600>
 </p>
 The best baseline model with default parameters was:
 
@@ -155,7 +155,7 @@ and finally adding additional feature "weekday"
 ### Feature importance
 For better understending of my model I plotted feature importance:
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature importance.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature%20importance.JPG" width=600>
 </p>
 Temperature is the most important feature used to predict PM2.5 level.
 
@@ -164,13 +164,15 @@ To check how my model performs I used real-time data.
 - Weather data: IMGW API 'https://danepubliczne.imgw.pl/api/data/synop'  
 - Air polution data: web scraping using URL: 'https://aqicn.org/city/poland/mazowieckie/warszawa/marszalkowska/pl/'  
 
-Using IMGW API I get current weather in Warsaw. I used my model to predict PM2.5 level, which was later compared with actual PM2.5 level scraped from AQICN using request and BeautifulSoup libraries. 
+Using IMGW API I get current weather in Warsaw. I used my model to predict PM2.5 level, which was later compared with actual PM2.5 level scraped from AQICN using request and BeautifulSoup libraries.
+
 **Validation run (14th July 2021): MSE = 55.94**
 
 
 ## Code and Resources Used 
 **Python Version:** 3.8.3  
 **Packages:** pandas, numpy, sklearn, matplotlib, seaborn, requests, BeautifulSoup
+
 **Plote Feature Importance, Source:** https://www.analyseup.com/learn-python-for-data-science/python-random-forest-feature-importance-plot.html
 
 
