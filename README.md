@@ -66,13 +66,13 @@ I merged both files, cleaned data, corrected types and set datetime index.
 I looked at the general info and distributions of the data. Here are some highlights:
 ### Temperature
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Temperatures.jpg" width=800>
 </p>
 
 ### PM2.5 level
 I created heatmap for each year presenting PM2.5 level. Here is a plot for 2018 (plots for other years can be found in notebook).
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_2018.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_2018.jpg" width=800>
 </p>
 As it is shown PM2.5 level is significantly higher during winter. Let's see how does PM2.5 level looks on the real plot in terms of temperature and wind.
 <p align="center">
@@ -83,7 +83,7 @@ As it is shown PM2.5 level is significantly higher during winter. Let's see how 
 During the first weeks of pandemia the world stopped for a second. Schools, factories and offices were closed to prevet spread of the virus.  
 Let's see if it changes PM2.5 level in the Warsaw city ceter by comparing it to previous years.
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_covid.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/PM25_covid.jpg" width=800>
 </p>
 
 #### Comment/Observation:
@@ -96,14 +96,14 @@ Let's see if it changes PM2.5 level in the Warsaw city ceter by comparing it to 
 To confirm our observation let's check average temperature and average PM2.5 level in April for each year.
 
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/pm25_covid_table.JPG" width=400>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/pm25_covid_table.JPG" width=300>
 </p>
 
 ### Correlations
 Quality of air is obtain by measuring several factors such as PM2.5, PM10, NO2.  
 For this analysis I will focus on PM2.5, thus I will remove columns with other air polutions.
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Correlation_heatmap.jpg" width=600>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/Correlation_heatmap.jpg" width=800>
 </p>
 
 #### Comment/Observation:
@@ -140,7 +140,7 @@ For further improvement of my model performance I decided to introduce new featu
 ## Model Performance Comparison
 Tabel below present comparison of model performance comparison.
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.JPG" width=500>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/model_results.JPG" width=400>
 </p>
 The best baseline model with default parameters was:
 
@@ -157,7 +157,7 @@ and finally adding additional feature "weekday"
 ### Feature importance
 For better understending of my model I plotted feature importance:
 <p align="center">
-  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature%20importance.JPG" width=700>
+  <img src="https://github.com/azebryk/Warsaw_air_quality_estimator/blob/master/images/feature%20importance.JPG" width=800>
 </p>
 Temperature is the most important feature used to predict PM2.5 level.
 
