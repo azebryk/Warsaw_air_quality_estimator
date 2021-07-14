@@ -116,24 +116,29 @@ For this analysis I will focus on PM2.5, thus I will remove columns with other a
 #### Base models
 I started from compering models with default hyperparameters. Prior to this, all features were standarized using StandardScaler.
 Models, which were compared:
-    - KNeighborsRegressor,
-    - LinearRegression,
-    - Ridge, 
-    - DecisionTreeRegressor, 
-    - RandomForestRegressor, 
-    - GradientBoostingRegressor
-    - XGBRegressor
+- KNeighborsRegressor,
+- LinearRegression,
+- Ridge, 
+- DecisionTreeRegressor, 
+- RandomForestRegressor, 
+- GradientBoostingRegressor
+- XGBRegressor
 
 #### Tuning hyperparameters using GrudSearchCV
 
 Based on results, I selected the best performing model and I optimized its hyperparameters using GridSearchCV.
+Parmeters grid:
+
+
 
 #### Adding new feature
 Traffic jams are one of the factor that contributes to bad air quality.
 For further improvement of my model performance I decided to introduce new feature - "Weekday", because as I live in Warsaw I see how traffic jams vary for different days. 
-3. Optimization of best performing model using GridSearchCV.
-4. Add additional binary feature 'weekday' and verify wather it improves model performance.
-5. Plot feature importances.
+
+## Model Performance Comparison
+Tabel below present comparison of model performance.
+    WSTAWIC TABELKE
+
 
 I tried three different models:
 *	**Multiple Linear Regression** – Baseline for the model
